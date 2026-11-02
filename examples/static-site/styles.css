@@ -1,0 +1,32 @@
+:root { --bg: #ffffff; --text: #1a1a1a; --muted: #555555; --accent: #0b57d0; --line: #d0d0d0; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #121212; --text: #f0f0f0; --muted: #a0a0a0; --accent: #8ab4f8; --line: #3a3a3a; }
+}
+:root[data-theme="dark"] { --bg: #121212; --text: #f0f0f0; --muted: #a0a0a0; --accent: #8ab4f8; --line: #3a3a3a; }
+
+* { box-sizing: border-box; }
+body { margin: 0; font: 1rem/1.5 system-ui, sans-serif; background: var(--bg); color: var(--text); }
+a { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.skip { position: absolute; left: 1rem; top: -4rem; background: var(--bg); padding: .5rem 1rem; }
+.skip:focus { top: 1rem; }
+header { display: flex; align-items: center; gap: 1rem; padding: 1rem; border-bottom: 1px solid var(--line); }
+header .name { font-weight: 700; margin-right: auto; color: var(--text); text-decoration: none; }
+button { font: inherit; color: var(--text); background: transparent; border: 1px solid var(--line); padding: .4rem .8rem; }
+nav ul { list-style: none; display: flex; gap: 1rem; margin: 0; padding: 0; }
+#menu-button { display: none; }
+@media (max-width: 600px) {
+  #menu-button { display: inline-block; }
+  #main-nav { display: none; position: absolute; top: 4rem; left: 0; right: 0; background: var(--bg); padding: 1rem; border-bottom: 1px solid var(--line); }
+  #main-nav.open { display: block; }
+  #main-nav ul { flex-direction: column; }
+}
+main { max-width: 40rem; margin: 0 auto; padding: 2rem 1rem; }
+.lead { animation: fade-in 1.2s ease-out; }
+.muted { color: var(--muted); }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .lead { animation: none; } }
+label { display: block; margin-top: 1rem; }
+input, textarea { font: inherit; width: 100%; padding: .4rem; color: var(--text); background: var(--bg); border: 1px solid var(--muted); }
+dialog { color: var(--text); background: var(--bg); border: 1px solid var(--line); }
+footer { padding: 2rem 1rem; border-top: 1px solid var(--line); text-align: center; }

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home · Fieldstone Bakery</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header>
+    <a class="name" href="/">Fieldstone Bakery</a>
+    <button id="menu-button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" aria-label="Main">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <button id="theme-toggle">Switch theme</button>
+  </header>
+  <main id="main" tabindex="-1">
+    <h1>Bread from the stone oven</h1>
+    <p class="lead">Sourdough, rye and seasonal bakes, made every morning.</p>
+    <p class="muted">Fresh loaves are out by 7am.</p>
+    <button id="subscribe">Subscribe</button>
+    <dialog id="subscribe-dialog" aria-labelledby="subscribe-title">
+      <h2 id="subscribe-title">Subscribe</h2>
+      <form method="dialog">
+        <label for="email">Email</label>
+        <input id="email" type="email" autocomplete="email">
+        <p><button data-close type="button">Close</button></p>
+      </form>
+    </dialog>
+  </main>
+  <footer><p class="muted">Fieldstone Bakery, 12 Mill Lane. Open Tuesday to Sunday.</p></footer>
+</body>
+</html>
