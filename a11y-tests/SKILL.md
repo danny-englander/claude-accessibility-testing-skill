@@ -1,6 +1,6 @@
 ---
 name: a11y-tests
-description: Sets up free, local accessibility tests for any web project with Playwright and axe-core. Scans every page and UI state (menus, dialogs, drawers, tabs, filters) in every theme, and adds keyboard and focus tests, a 320px reflow test, a readable violation report and a manual checklist. No account, API key or MCP server. Use when the user asks to add accessibility or a11y tests, axe or WCAG checks, contrast checks in dark mode, or accessibility tests in CI.
+description: Sets up free, local accessibility tests with Playwright and axe, no API key. Scans every page, UI state and theme, and adds keyboard, focus and reflow tests. Use for a11y or WCAG tests.
 ---
 
 # Local accessibility tests with Playwright and axe

@@ -15,13 +15,35 @@ Ask Claude to "add accessibility tests to this site" and the skill:
 
 ## Install
 
-Copy the `a11y-tests` folder into your skills folder, for all your projects:
+The skill is the `a11y-tests` folder. It needs a Claude that can run commands in your project, so use it in Claude Code: the terminal, or the Code tab of the Claude desktop app.
+
+**The easy way:** in Claude Code, ask:
+
+> Install the a11y-tests skill from https://github.com/danny-englander/claude-accessibility-testing-skill into ~/.claude/skills
+
+**By hand:** copy the `a11y-tests` folder into `~/.claude/skills/` (for all your projects) or into one project's `.claude/skills/`. In a terminal:
 
 ```bash
-git clone https://github.com/danny-englander/claude-accessibility-testing-skill.git /tmp/a11y-tests-skill && cp -r /tmp/a11y-tests-skill/a11y-tests ~/.claude/skills/
+git clone https://github.com/danny-englander/claude-accessibility-testing-skill.git /tmp/a11y-tests-skill && mkdir -p ~/.claude/skills && cp -r /tmp/a11y-tests-skill/a11y-tests ~/.claude/skills/
 ```
 
-or into one project's `.claude/skills/`. Then, in that project, ask Claude to add accessibility tests, or run `/a11y-tests`.
+Claude Code picks the skill up without a restart. To check, type `/` in the prompt box and look for `a11y-tests`, or run `/skills` in the terminal.
+
+**From claude.ai or the Claude desktop app:**
+
+1. Make a ZIP of the `a11y-tests` folder, so the folder itself is at the top of the ZIP: in Finder, right-click it and choose Compress, or run `zip -r a11y-tests.zip a11y-tests`.
+2. Make sure Settings > Capabilities > "Code execution and file creation" is on.
+3. Go to Customize > Skills, click "+", then "Create skill", then "Upload a skill", and choose the ZIP.
+
+A skill added this way also loads in Claude Code when you sign in with the same Claude account (Claude Code 2.1.273 or later; it is listed under "claude.ai sync" in `/skills`).
+
+## Use
+
+In your project, ask Claude to "add accessibility tests", or type `/a11y-tests`. Claude surveys the site, shows you what it found, and then sets up and runs the tests.
+
+## Works with
+
+Any site Playwright can open in a browser. The skill doesn't depend on a framework: Claude reads your project to find how it is built and served, where its pages come from and how its themes switch. `SKILL.md` has the serve commands for Astro, Vite (React, Vue, Svelte, Solid), SvelteKit, Next.js, Nuxt, Remix and React Router, Gatsby, static generators (Eleventy, Hugo, Jekyll), plain HTML, and server apps such as Rails, Django and Laravel. So far it has been tried end to end on the static site in `examples/`.
 
 ## What it adds to a project
 
