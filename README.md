@@ -78,6 +78,16 @@ When the skill adds the GitHub Actions job (`.github/workflows/accessibility.yml
 
 The badge is green while the tests pass on your default branch and red when they fail, so it can't go out of date. Claude offers it after setting up CI.
 
+No CI? Use a static badge that says how the site is tested:
+
+```markdown
+[![a11y tests: axe + Playwright](https://img.shields.io/badge/a11y_tests-axe_%2B_Playwright-blue)](https://github.com/danny-englander/claude-accessibility-testing-skill)
+```
+
+[![a11y tests: axe + Playwright](https://img.shields.io/badge/a11y_tests-axe_%2B_Playwright-blue)](https://github.com/danny-englander/claude-accessibility-testing-skill)
+
+It doesn't change when the tests fail, so it shouldn't say "passing", "accessible" or "WCAG AA".
+
 ## What it doesn't do
 
 Automated tests find many problems, but not all. They can't tell whether alt text is meaningful, whether the reading order makes sense, or how a screen reader announces a change. The manual checklist covers those. A passing suite means the site passes these checks, not that it is "accessible" or "WCAG compliant".

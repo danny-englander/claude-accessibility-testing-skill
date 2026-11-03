@@ -168,7 +168,13 @@ Once the workflow is in, offer the owner a status badge for their README, with t
 [![Accessibility tests](https://github.com/OWNER/REPO/actions/workflows/accessibility.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/accessibility.yml)
 ```
 
-Only offer this CI badge. Don't add a static badge that says "accessible" or "WCAG AA": it claims more than the tests check, and it stays green when they fail.
+Without CI, offer a static badge instead. It says how the site is tested, not that it passes:
+
+```markdown
+[![a11y tests: axe + Playwright](https://img.shields.io/badge/a11y_tests-axe_%2B_Playwright-blue)](https://github.com/danny-englander/claude-accessibility-testing-skill)
+```
+
+Never word a badge as a result, such as "accessible", "WCAG AA" or "a11y: passing", unless it is the CI badge. A static badge stays green when the tests fail.
 
 ## 6. Tell the owner what's covered
 
