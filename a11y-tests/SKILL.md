@@ -138,7 +138,7 @@ Done means every test passes, with any exclusions approved by the owner and list
 
 ## 5. CI (ask first)
 
-Offer to add a CI job. For GitHub Actions:
+Offer to add a CI job. For GitHub Actions, save this as `.github/workflows/accessibility.yml`:
 
 ```yaml
 name: Accessibility
@@ -161,6 +161,14 @@ jobs:
           name: playwright-report
           path: playwright-report
 ```
+
+Once the workflow is in, offer the owner a status badge for their README, with their own owner and repository names. It shows whether the tests pass on the default branch right now:
+
+```markdown
+[![Accessibility tests](https://github.com/OWNER/REPO/actions/workflows/accessibility.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/accessibility.yml)
+```
+
+Only offer this CI badge. Don't add a static badge that says "accessible" or "WCAG AA": it claims more than the tests check, and it stays green when they fail.
 
 ## 6. Tell the owner what's covered
 

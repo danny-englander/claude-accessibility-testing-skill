@@ -68,6 +68,16 @@ Run it with `npm run test:a11y`.
 cd examples/static-site && npm install && npx playwright install chromium && npm run test:a11y
 ```
 
+## Badge
+
+When the skill adds the GitHub Actions job (`.github/workflows/accessibility.yml`), you can show its result in your README. Replace `OWNER/REPO` with your repository:
+
+```markdown
+[![Accessibility tests](https://github.com/OWNER/REPO/actions/workflows/accessibility.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/accessibility.yml)
+```
+
+The badge is green while the tests pass on your default branch and red when they fail, so it can't go out of date. Claude offers it after setting up CI.
+
 ## What it doesn't do
 
 Automated tests find many problems, but not all. They can't tell whether alt text is meaningful, whether the reading order makes sense, or how a screen reader announces a change. The manual checklist covers those. A passing suite means the site passes these checks, not that it is "accessible" or "WCAG compliant".
